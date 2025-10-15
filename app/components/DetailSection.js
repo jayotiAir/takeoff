@@ -11,6 +11,12 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useEffect,useState } from 'react';
+if (typeof window !== 'undefined') {
+  // safe to use window here
+  console.log(window.location.href);
+}
+
 
 const details = [
     {
@@ -38,6 +44,9 @@ const details = [
             "When we complete a takeoff for you, it’s specific to your needs. We can input data in any preferred format as well as accommodate custom descriptions and naming conventions.",
     },
 ];
+
+
+
 
 // Animation Variants
 const containerVariants = {
@@ -69,8 +78,20 @@ const fadeIn = {
 
 export default function DetailsSection() {
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+    // const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+      const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    // Set initial value
+    setIsMobile(window.innerWidth < 1000);
+
+    // Optional: listen to resize to update dynamically
+    const handleResize = () => setIsMobile(window.innerWidth < 1000);
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup listener on unmount
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
     return (
         <Box
             component="section"
@@ -85,21 +106,21 @@ export default function DetailsSection() {
             }}
         >
             {/* Absolutely positioned OVERLAPPING image */}
-            <motion.div
-                variants={fadeIn}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, amount: 0.3 }}
-                style={{
-                    position: "absolute",
-                    top: -110,
-                    right: 400,
-                    zIndex: 5,
-                    width: "100%",
-                    maxWidth: "500px",
-                    display: window.innerWidth < 1000 ? "none" : "block" // Not reactive to resize
-                }}
-            >
+              <motion.div
+      variants={fadeIn}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      style={{
+        position: "absolute",
+        top: -110,
+        right: 400,
+        zIndex: 5,
+        width: "100%",
+        maxWidth: "500px",
+        display: isMobile ? "none" : "block",
+      }}
+    >
 
                 <Image
                     src="/images/difference-in-details.jpg"
