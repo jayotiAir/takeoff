@@ -11,10 +11,10 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 if (typeof window !== 'undefined') {
-  // safe to use window here
-  console.log(window.location.href);
+    // safe to use window here
+    console.log(window.location.href);
 }
 
 
@@ -79,19 +79,19 @@ const fadeIn = {
 export default function DetailsSection() {
     const theme = useTheme();
     // const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-      const [isMobile, setIsMobile] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    // Set initial value
-    setIsMobile(window.innerWidth < 1000);
+    useEffect(() => {
+        // Set initial value
+        setIsMobile(window.innerWidth < 1000);
 
-    // Optional: listen to resize to update dynamically
-    const handleResize = () => setIsMobile(window.innerWidth < 1000);
-    window.addEventListener('resize', handleResize);
+        // Optional: listen to resize to update dynamically
+        const handleResize = () => setIsMobile(window.innerWidth < 1000);
+        window.addEventListener('resize', handleResize);
 
-    // Cleanup listener on unmount
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
+        // Cleanup listener on unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
     return (
         <Box
             component="section"
@@ -106,21 +106,21 @@ export default function DetailsSection() {
             }}
         >
             {/* Absolutely positioned OVERLAPPING image */}
-              <motion.div
-      variants={fadeIn}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
-      style={{
-        position: "absolute",
-        top: -110,
-        right: 400,
-        zIndex: 5,
-        width: "100%",
-        maxWidth: "500px",
-        display: isMobile ? "none" : "block",
-      }}
-    >
+            <motion.div
+                variants={fadeIn}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                style={{
+                    position: "absolute",
+                    top: -110,
+                    right: 400,
+                    zIndex: 5,
+                    width: "100%",
+                    maxWidth: "500px",
+                    display: isMobile ? "none" : "block",
+                }}
+            >
 
                 <Image
                     src="/images/difference-in-details.jpg"
@@ -137,17 +137,17 @@ export default function DetailsSection() {
             </motion.div>
 
             <Container>
-                <Grid container spacing={10} alignItems="flex-start" justifyContent={{xs:'center',sm:'center'}}>
+                <Grid container spacing={10} alignItems="flex-start" justifyContent={{ xs: 'center', sm: 'center' }}>
                     {/* LEFT COLUMN */}
                     <Grid item xs={12} md={6}>
                         <Typography
                             variant="h2"
                             sx={{
                                 fontWeight: 700,
-                                mb: 4,
+                                mb: 2,
                                 lineHeight: 1.2,
                                 color: "#003720",
-                                textAlign: { xs: "center",sm:'center', md: "left" },
+                                textAlign: { xs: "center", sm: 'center', md: "left" },
                             }}
                         >
                             Our<br />Difference<br />Is in the<br />Details
@@ -178,7 +178,7 @@ export default function DetailsSection() {
 
                     {/* RIGHT COLUMN */}
                     <Grid item xs={12} md={6}>
-                        <Box sx={{ mt: { xs: 25, md: 20 }, maxWidth: 700 ,justifyContent:{xs:'center',sm:'center'}}}>
+                        <Box sx={{ mt: { xs: 0, md: 15 }, maxWidth: 700, justifyContent: { xs: 'center', sm: 'center',md:'left' } }}>
                             <motion.div
                                 variants={containerVariants}
                                 initial="hidden"
@@ -187,43 +187,43 @@ export default function DetailsSection() {
                             >
                                 {details.map((item, index) => (
                                     <motion.div key={index} variants={itemVariants}>
-                                        <Box sx={{ mb: 4,justifyContent:{xs:'center',sm:'center'}}}>
+                                        <Box sx={{ mb: 4, justifyContent: { xs: 'center', sm: 'center',md:'left' } }}>
                                             <Typography
                                                 variant="h6"
                                                 sx={{
                                                     fontWeight: 600,
                                                     color: "#003720",
                                                     textAlign: "left",
-                                                    textAlign:{xs:'center',sm:'center'}
+                                                    textAlign: { xs: 'center', sm: 'center',md:'left' }
                                                 }}
                                             >
                                                 {item.title}
                                             </Typography>
-                                               <Box
-                                    sx={{
-                                        display: 'flex',
-                                        justifyContent: { xs: 'center', sm: 'center', md: 'flex-start' }, // Center on xs, left on md+
-                                        mb: 2,
-                                    }}
-                                >
-                                    <Divider
+                                            <Box
                                                 sx={{
-                                                    width: 50,
-                                                    my: 1,
-                                                    backgroundColor: "#003720",
-                                                    textAlign:{xs:'center',sm:'center'}
-
+                                                    display: 'flex',
+                                                    justifyContent: { xs: 'center', sm: 'center', md: 'left' }, // Center on xs, left on md+
+                                                    mb: 2,
                                                 }}
-                                            />
+                                            >
+                                                <Divider
+                                                    sx={{
+                                                        width: 50,
+                                                        my: 1,
+                                                        backgroundColor: "#003720",
+                                                        textAlign: { xs: 'center', sm: 'center' ,md:'left'}
 
-                                </Box>
-                                            
+                                                    }}
+                                                />
+
+                                            </Box>
+
                                             <Typography
                                                 variant="body1"
                                                 sx={{
                                                     color: "#333",
                                                     textAlign: "left",
-                                                    textAlign:{xs:'center',sm:'center'}
+                                                    textAlign: { xs: 'center', sm: 'center',md:'left' }
 
                                                 }}
                                             >

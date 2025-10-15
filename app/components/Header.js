@@ -132,18 +132,18 @@ export default function Header() {
                         <Button
                           variant="contained"
                           fullWidth
-                          sx={{
-                            backgroundColor: "#fff",
-                            color: "#000",
-                            fontWeight: 700,
-                            fontSize: "1rem",
-                            borderRadius: "20px",
-                            textTransform: "none",
-                            "&:hover": {
-                              backgroundColor: "#000",
-                              color: "#fff",
-                            },
-                          }}
+                            sx={{
+                                backgroundColor: "#fff",
+                                color: "#000",
+                                borderRadius: "20px",
+                                textTransform: "none",
+                                fontWeight: 900,
+                                fontSize: "1.25rem",
+                                "&:hover": {
+                                    backgroundColor: "#000",
+                                    color: "#fff",
+                                },
+                            }}
                         >
                           Upload Project
                         </Button>
@@ -168,40 +168,22 @@ export default function Header() {
                     </Button>
                   </Link>
                 ))}
-                <Link href="/UpProject" passHref>
-                  <Button
-                    variant="contained"
-                    sx={{
-                      backgroundColor: "#f2ec76",
-                      color: "#000",
-                      borderRadius: "20px",
-                      textTransform: "none",
-                      fontWeight: 600,
-                      fontSize: "1rem",
-                      "&:hover": {
-                        backgroundColor: "#000",
-                        color: "#fff",
-                      },
-                    }}
-                  >
-                    Upload Project
-                  </Button>
-                </Link>
+                
                 <Button
                   onClick={handleAvatarClick}
                   variant="contained"
-                  sx={{
-                    backgroundColor: '#f2ec76',
-                    color: '#000',
-                    borderRadius: '20px',
-                    textTransform: 'none',
-                    fontWeight: 600,
-                    fontSize: '1rem',
-                    '&:hover': {
-                      backgroundColor: '#000',
-                      color: '#fff',
-                    },
-                  }}
+               sx={{
+                                backgroundColor: "#fff",
+                                color: "#000",
+                                borderRadius: "20px",
+                                textTransform: "none",
+                                fontWeight: 900,
+                                fontSize: "1.25rem",
+                                "&:hover": {
+                                    backgroundColor: "#000",
+                                    color: "#fff",
+                                },
+                            }}
                 >
                   Upload Project
                 </Button>
