@@ -165,7 +165,26 @@ const Footer = () => {
                             LET’S DO THIS
                         </Typography>
 
-                        <Divider sx={{ mb: 2, width: '100px' }} />
+
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                justifyContent: { xs: 'center', sm: 'center', md: 'left' }, // Center on xs, left on md+
+                                mb: 2,
+                            }}
+                        >
+                            <Divider
+                                sx={{
+                                    width: 50,
+                                    my: 1,
+                                    backgroundColor: "#003720",
+                                    textAlign: { xs: 'center', sm: 'center', md: 'left' }
+
+                                }}
+                            />
+
+                        </Box>
+
                         <Button
                             variant="contained"
                             sx={{

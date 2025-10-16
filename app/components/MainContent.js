@@ -51,10 +51,10 @@ export default function MainContent() {
             sx={{
                 position: "relative",
                 backgroundColor: "#f5f5f5",
-                py: { xs: 8, md: 12 },
+                py: { xs: 4, md: 12 },
                 zIndex: 10,
                 mb: { xs: -15, md: -20 }, // ❗️This is what makes it overlap
-                justifyContent:{xs:'center',sm:'center'}
+                justifyContent: { xs: 'center', sm: 'center' }
             }}
         >
             <Container>
@@ -72,6 +72,7 @@ export default function MainContent() {
                             textAlign: "center",
                             mb: 2,
                             color: "#003720",
+                            fontSize: { xs: '2rem', sm: '2.5rem', md: '4rem' }
                         }}
                     >
                         Professional takeoff services to help
@@ -93,6 +94,8 @@ export default function MainContent() {
                             textAlign: "center",
                             mb: 2,
                             color: "#003720",
+                            fontSize: { xs: '2rem', sm: '2.5rem', md: '4rem' }
+
                         }}
                     >
                         Your business truly takeoff.
@@ -158,7 +161,7 @@ export default function MainContent() {
                 sx={{
                     position: "relative",
                     zIndex: 10,
-                    mt: 6, justifyContent:{xs:'center'}
+                    mt: 6, justifyContent: { xs: 'center' }
                 }}
             >
                 <Box
@@ -174,11 +177,14 @@ export default function MainContent() {
 
                     <Grid container spacing={4} justifyContent="center">
                         {services.map((service, index) => (
-                            <Grid item key={index} xs={12} sm={6} md={6}>
+                            <Grid item key={index} xs={12} sm={6} md={6} sx={{
+                                display: "flex",
+                                justifyContent: "center", // 💡 center cards on smaller screens
+                            }}>
                                 <Card
                                     sx={{
                                         position: "relative",
-                                        height: 350,
+                                        height: { xs: 300, sm: 350 },
                                         width: 450,
                                         overflow: "hidden",
                                         transition:

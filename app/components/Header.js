@@ -1,6 +1,5 @@
 "use client";
 import { useRouter } from 'next/navigation'; // App Router version
-
 import React, { useState } from "react";
 import {
   AppBar,
@@ -38,7 +37,7 @@ export default function Header() {
   const router = useRouter();
 
   const handleAvatarClick = () => {
-    router.push('/UpProject'); // navigate to /UpProject
+    router.push('/UpProject'); 
   };
   return (
     <>
@@ -83,7 +82,7 @@ export default function Header() {
                   PaperProps={{
                     sx: {
                       backgroundColor: "#f2ec76",
-                      width: "30vw",
+                      width: "50vw",
                     },
                   }}
                 >
