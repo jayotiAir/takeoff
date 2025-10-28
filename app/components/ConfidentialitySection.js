@@ -7,9 +7,9 @@ import {
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { keyframes } from "@emotion/react";
-import { Box, Container, Grid, Typography, Button, useMediaQuery, useTheme, Link as MuiLink } from '@mui/material'; import Link from 'next/link'; // if using Next.js
+import { Box, Container, Grid, Typography, Button, useMediaQuery, useTheme, Link as MuiLink } from '@mui/material'; import Link from 'next/link'; 
 
-// Animation variant
+
 const fadeIn = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -17,7 +17,7 @@ const fadeIn = {
         y: 0,
         transition: {
             duration: 0.8,
-            ease: [0.25, 0.1, 0.25, 1], // Custom cubic-bezier for a smoother ease-out
+            ease: [0.25, 0.1, 0.25, 1],
         },
     },
 };
@@ -155,7 +155,7 @@ export default function ConfidentialitySection() {
                 sx={{
                     position: "relative",
                     backgroundColor: "#fff",
-                    pt: 12,
+                    pt: 8,
                     pb: 6,
                     overflow: "visible",
                 }}
@@ -163,7 +163,7 @@ export default function ConfidentialitySection() {
                 <Box
                     sx={{
                         position: "absolute",
-                        top: -60,
+                        top: {xs:-10,sm:-20,md:-70},
                         width: "100%",
                         overflow: "hidden",
                         whiteSpace: "nowrap",
@@ -184,9 +184,9 @@ export default function ConfidentialitySection() {
                                 color: "#003720",
                                 display: "inline-block",
                                 fontSize: {
-                                    xs: '3rem',
+                                    xs: '2rem',
                                     sm: '5rem',
-                                    md: '10rem',
+                                    md: '8rem',
                                 },
                                 whiteSpace: "nowrap",
                             }}
@@ -199,7 +199,7 @@ export default function ConfidentialitySection() {
                 {/* Divider below the scrolling text */}
                 <Box
                     sx={{
-                        mt: 8,
+                        mt: {xs:0,sm:2,md:2},
                         maxWidth: '50rem',
                         mx: "auto",
                         zIndex: 1,
@@ -211,13 +211,14 @@ export default function ConfidentialitySection() {
                             backgroundColor: "#f2ec76",
                             height: 4,
                             borderRadius: 2,
+
                         }}
                     />
                 </Box>
             </Box>
 
             {/* CTA Section */}
-            <Box component="section" sx={{ backgroundColor: '#ffffff', py: { xs: 6, md: 14 }, }} >
+            <Box component="section" sx={{ backgroundColor: '#ffffff', py: { xs: 2, md: 4 }, }} >
                 <Container>
                     <Grid container spacing={10} alignItems="center" direction={isXsBelow500 ? 'column' : 'row'} textAlign={isXsBelow500 ? 'center' : 'initial'} >
                         {/* Left Side: Text */} <Grid item xs={12} md={6}>
@@ -230,7 +231,7 @@ export default function ConfidentialitySection() {
                                 fill out a simple form to apply for free service.
                                 <br /> It’s that easy. </Typography>
                         </Grid> {/* Right Side: Button */}
-                        <Grid item xs={12} md={8} sx={{ display: 'flex', justifyContent: isXsBelow500 ? 'center' : 'flex-end', mt: isXsBelow500 ? 4 : 0, }} >
+                        <Grid item xs={12} md={8} sx={{ display: 'flex', justifyContent: isXsBelow500 ? 'center' : 'flex-end', mt: isXsBelow500 ? 0 : 0, }} >
                             <Link href="/test-drive" passHref>
                                 <Button
                                     variant="contained"
@@ -238,14 +239,14 @@ export default function ConfidentialitySection() {
                                         backgroundColor: '#f2ec76',
                                         color: '#000',
                                         fontWeight: 600,
-                                        px: { xs: 3, sm: 4 }, // Increase padding to give space for text
+                                        px: { xs: 3, sm: 4 }, 
                                         py: 2,
                                         fontSize: { xs: '1rem', sm: '1.25rem' },
                                         borderRadius: 2,
                                         boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
                                         transition: 'all 0.3s ease',
-                                        whiteSpace: 'nowrap', // 🚨 Prevents text wrapping
-                                        maxWidth: '100%', // You can remove or adjust this if needed
+                                        whiteSpace: 'nowrap', 
+                                        maxWidth: '100%', 
                                         '&:hover': {
                                             backgroundColor: '#003720',
                                             color: '#f2ec76',

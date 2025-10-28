@@ -1,5 +1,4 @@
 "use client";
-
 import {
     Box,
     Container,
@@ -44,9 +43,6 @@ const details = [
             "When we complete a takeoff for you, it’s specific to your needs. We can input data in any preferred format as well as accommodate custom descriptions and naming conventions.",
     },
 ];
-
-
-
 
 // Animation Variants
 const containerVariants = {
@@ -129,7 +125,7 @@ export default function DetailsSection() {
                     height={491}
                     style={{
                         width: "100%",
-                        height: "auto",
+                        height: "auto", 
                         borderRadius: "8px",
                         boxShadow: "0 12px 30px rgba(0,0,0,0.2)",
                     }}
@@ -147,6 +143,7 @@ export default function DetailsSection() {
                                 mb: 2,
                                 lineHeight: 1.2,
                                 color: "#003720",
+                                fontSize:{xs:'2rem'},
                                 textAlign: { xs: "center", sm: 'center', md: "left" },
                             }}
                         >
@@ -162,7 +159,7 @@ export default function DetailsSection() {
                             }}
                         >
                             <Image
-                                src="/images/difference-in-details.jpg"
+                                src="/images/-in-details.jpg"
                                 alt="Details Image"
                                 width={800}
                                 height={500}
